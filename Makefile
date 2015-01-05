@@ -1,3 +1,5 @@
+all: ppm png jpg
+
 download:
 	rm -f Sheets_Letter.pdf
 	wget http://infinitythegame.com/archivo/Sheets_Letter.pdf
