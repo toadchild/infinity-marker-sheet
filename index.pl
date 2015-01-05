@@ -89,7 +89,7 @@ EOF
     my $x = $min_x;
     my $y = $max_y;
     my $max_height = 0;
-    my $pad = 72.0/8;
+    my $pad = 72.0/10;
 
     my $page = $pdf->new_page('MediaBox' => $paper);
     for my $marker (@$annotations){
