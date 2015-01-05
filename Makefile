@@ -24,4 +24,6 @@ jpg: .PHONY
 install:
 	cp -R jpg index.pl annotation.csv /var/www/inf-dice/markers/
 
+beta:
+	cp -R jpg index.pl annotation.csv /var/www/inf-dice/markers/beta/
 .PHONY:
