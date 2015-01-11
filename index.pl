@@ -31,7 +31,19 @@ Content-Type: text/html; charset=utf-8
 EOF
 
     print "<h1>Infinity Marker Sheet Creator</h1>\n";
-    print "<p>Create a custom marker sheet by selecting the number and size of each kind of marker you want, along with the size of paper.  When you submit, a PDF will be generated and downloaded.  You can scale markers up or down in size, although there may be quality loss if you do.</p>\n";
+    print <<EOF;
+<p>
+Create a custom marker sheet by selecting the number and size of each
+kind of marker you want, along with the size of paper.
+When you submit, a PDF will be generated and downloaded.
+</p>
+<p>
+For each kind of marker, an appropriate set of size choices are available.
+Markers not marked "Hi Res" may look slightly blurry if they are being scaled
+up, but should still look decent when printed.
+Additional sizes for markers may be added upon request.
+</p>
+EOF
     print "<form method='post'>\n";
     print "<h2>Paper Size</h2>\n";
     print "<select name='paper'>\n";
