@@ -14,14 +14,14 @@ ppm: Sheets_Letter.pdf
 jpg: .PHONY
 	rm -rf jpg
 	mkdir jpg
-	for i in ppm/*; do out=`echo $$i | sed -e 's/ppm/jpg/g'`; convert -density 150 -units PixelsPerInch $$i $$out; done
-	./domask.pl annotation.csv jpg
-	for i in jpg/*; do mogrify -fuzz 5% -trim +repage $$i; done
+	./doconversion.pl ppm jpg
 
 install:
-	cp index.pl annotation.csv /var/www/inf-dice/markers/
-	./install_images.pl /var/www/inf-dice/markers/
+	rm -rf /var/www/inf-dice/markers/jpg/
+	rm -rf /var/www/inf-dice/markers/thumb/
+	cp -R jpg thumb index.pl annotation.csv /var/www/inf-dice/markers/
 
 beta:
-	cp index.pl annotation.csv /var/www/inf-dice/markers/beta/
-	./install_images.pl /var/www/inf-dice/markers/beta/
+	rm -rf /var/www/inf-dice/markers/beta/jpg/
+	rm -rf /var/www/inf-dice/markers/beta/thumb/
+	cp -R jpg thumb index.pl annotation.csv /var/www/inf-dice/markers/beta/
