@@ -1,4 +1,4 @@
-all: ppm png jpg
+all: ppm jpg
 
 .PHONY:
 
@@ -11,17 +11,12 @@ ppm: Sheets_Letter.pdf
 	mkdir ppm
 	pdfimages Sheets_Letter.pdf ppm/marker
 
-png: .PHONY
-	rm -rf png
-	mkdir png
-	for i in ppm/*; do out=`echo $$i | sed -e 's/ppm/png/g'`; convert -density 150 -units PixelsPerInch $$i $$out; done
-	./domask.pl annotation.csv png
-	for i in png/*; do mogrify -fuzz 5% -trim +repage $$i; done
-
 jpg: .PHONY
 	rm -rf jpg
 	mkdir jpg
-	for i in png/*; do out=`echo $$i | sed -e 's/png/jpg/g'`; convert -density 150 -units PixelsPerInch $$i $$out; done
+	for i in ppm/*; do out=`echo $$i | sed -e 's/ppm/jpg/g'`; convert -density 150 -units PixelsPerInch $$i $$out; done
+	./domask.pl annotation.csv jpg
+	for i in jpg/*; do mogrify -fuzz 5% -trim +repage $$i; done
 
 install:
 	cp index.pl annotation.csv /var/www/inf-dice/markers/
