@@ -1,5 +1,7 @@
 all: ppm png jpg
 
+.PHONY:
+
 download:
 	rm -f Sheets_Letter.pdf
 	wget http://infinitythegame.com/archivo/Sheets_Letter.pdf
@@ -22,8 +24,9 @@ jpg: .PHONY
 	for i in png/*; do out=`echo $$i | sed -e 's/png/jpg/g'`; convert -density 150 -units PixelsPerInch $$i $$out; done
 
 install:
-	cp -R jpg index.pl annotation.csv /var/www/inf-dice/markers/
+	cp index.pl annotation.csv /var/www/inf-dice/markers/
+	./install_images.pl /var/www/inf-dice/markers/
 
 beta:
-	cp -R jpg index.pl annotation.csv /var/www/inf-dice/markers/beta/
-.PHONY:
+	cp index.pl annotation.csv /var/www/inf-dice/markers/beta/
+	./install_images.pl /var/www/inf-dice/markers/beta/

@@ -42,11 +42,9 @@ EOF
     print "<table>\n";
     print "<tr><th></th><th>Name</th><th>Size</th><th>Count</th></tr>\n";
     for my $marker (@$annotations){
-        my ($xres, $yres) = imgsize($marker->{imgfile});
-        my $width = 30;
-        my $height = $yres * $width / $xres;
+        my ($width, $height) = imgsize($marker->{thumbfile});
         print "<tr>\n";
-        print "<td><img src='$marker->{imgfile}' height=$height width=$width></td>\n";
+        print "<td><img src='$marker->{thumbfile}' height=$height width=$width></td>\n";
         print "<td>$marker->{name}</td>\n";
         print "<td><input type='text' name='$marker->{id}_size' value='$marker->{size}' size=2> mm</td>\n";
         print "<td> <input type=text name='$marker->{id}' value='0' size=2></td>\n";
@@ -81,15 +79,15 @@ EOF
                               );
     my $paper_size = param('paper') // 'Letter';
     my $paper = $pdf->get_page_size($paper_size);
-    my $min_x = 72/2;
-    my $min_y = 72/2;
-    my $max_x = $paper->[2] - 72/2;
-    my $max_y = $paper->[3] - 72/2;
+    my $min_x = 72/4.0;
+    my $min_y = 72/4.0;
+    my $max_x = $paper->[2] - 72/4.0;
+    my $max_y = $paper->[3] - 72/4.0;
 
     my $x = $min_x;
     my $y = $max_y;
     my $max_height = 0;
-    my $pad = 72.0/10;
+    my $pad = 72.0/11;
 
     my $page = $pdf->new_page('MediaBox' => $paper);
     for my $marker (@$annotations){
@@ -103,7 +101,7 @@ EOF
             # without a $scale, renders at 1:1 pixels:points
             # scale is units of points/pixel
             my $size = param("$marker->{id}_size") // $marker->{size};
-            my $scale = ($size / 25.4 * 72)/($xres);
+            my $scale = ($size / 25.4 * 72)/($xres) * 1.04;
             my $scaled_width = $xres * $scale;
             my $scaled_height = $yres * $scale;;
 
@@ -144,6 +142,7 @@ sub read_annotations{
         chomp $line;
         my ($id, $name, $count, $mask, $size) = split /,/, $line;
         my $imgfile = "jpg/marker-$id.jpg";
-        push @$annotations, {id => $id, name => $name, count => $count, size => $size, imgfile => $imgfile};
+        my $thumbfile = "thumb/marker-$id.jpg";
+        push @$annotations, {id => $id, name => $name, count => $count, size => $size, imgfile => $imgfile, thumbfile => $thumbfile};
     }
 }
