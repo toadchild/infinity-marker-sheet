@@ -15,7 +15,7 @@ open(my $file, '<', "annotation.csv");
 
 while(my $line = <$file>){
     chomp $line;
-    my ($id, $name, $count, $mask, $size) = split /,/, $line;
+    my ($id, $name, $count, $mask) = split /,/, $line;
 
     # convert file
     my $infile = "$src/marker-$id.$src";

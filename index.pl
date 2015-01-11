@@ -39,18 +39,39 @@ EOF
     print "<option value='A4'>A4</option>\n";
     print "</select>\n";
     print "<h2>Markers</h2>\n";
-    print "<table>\n";
-    print "<tr><th></th><th>Name</th><th>Size</th><th>Count</th></tr>\n";
+    my $category = "";
+
     for my $marker (@$annotations){
-        my ($width, $height) = imgsize($marker->{thumbfile});
+        if($category ne $marker->{category}){
+            $category = $marker->{category};
+
+            if($category ne ""){
+                print "</table>\n";
+            }
+
+            print "<h3>$category</h3>\n";
+            print "<table>\n";
+            print "<tr><th></th><th>Name</th><th>Size</th><th>Count</th></tr>\n";
+        }
+
         print "<tr>\n";
+        my ($width, $height) = imgsize($marker->{thumbfile});
         print "<td><img src='$marker->{thumbfile}' height=$height width=$width></td>\n";
         print "<td>$marker->{name}</td>\n";
-        print "<td><input type='text' name='$marker->{id}_size' value='$marker->{size}' size=2> mm</td>\n";
+        print "<td><select name='$marker->{id}_size'>\n";
+        for my $size (@{$marker->{sizes}}){
+            my $selected = "";
+            if($size == 25){
+                $selected = " selected";
+            }
+            print "<option value='$size'$selected>$size mm</option>\n";
+        }
+        print "</select></td>\n";
         print "<td> <input type=text name='$marker->{id}' value='0' size=2></td>\n";
         print "</tr>\n";
     }
     print "</table>\n";
+
     print "<input type='hidden' name='action' value='draw'>\n";
     print "<input type='submit'>\n";
     print "</form>\n";
@@ -100,7 +121,7 @@ EOF
             # 1 point is 1/72 inch
             # without a $scale, renders at 1:1 pixels:points
             # scale is units of points/pixel
-            my $size = param("$marker->{id}_size") // $marker->{size};
+            my $size = param("$marker->{id}_size") // 25;
             my $scale = ($size / 25.4 * 72)/($xres) * 1.04;
             my $scaled_width = $xres * $scale;
             my $scaled_height = $yres * $scale;;
@@ -140,9 +161,10 @@ sub read_annotations{
     open(my $data, '<', "annotation.csv");
     while(my $line = <$data>){
         chomp $line;
-        my ($id, $name, $count, $mask, $size) = split /,/, $line;
+        my ($id, $name, $count, $mask, $cat, $sizes) = split /,/, $line;
         my $imgfile = "jpg/marker-$id.jpg";
         my $thumbfile = "thumb/marker-$id.jpg";
-        push @$annotations, {id => $id, name => $name, count => $count, size => $size, imgfile => $imgfile, thumbfile => $thumbfile};
+        my @sizes = split /\//, $sizes;
+        push @$annotations, {id => $id, name => $name, count => $count, imgfile => $imgfile, thumbfile => $thumbfile, sizes => \@sizes, category => $cat};
     }
 }
