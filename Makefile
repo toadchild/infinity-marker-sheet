@@ -16,6 +16,7 @@ jpg: .PHONY
 	mkdir jpg
 	./doconversion.pl ppm jpg
 	./doconversion.pl killian jpg
+	./doconversion.pl command jpg
 
 install:
 	rm -rf /var/www/inf-dice/markers/jpg/

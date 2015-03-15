@@ -1,109 +1,113 @@
-019,Regular,10,,Orders and Related,10/15/20/25
-029,Irregular,4,,Orders and Related,10/15/20/25
-033,Impetuous,5,,Orders and Related,10/15/20/25
-Ex Impetuious,Extreme Impetuous,,,Orders and Related,10/15/20/25
-056,Lieutenant,1,,Orders and Related,10/15/20/25
-142,Command Token,5,,Orders and Related,10/15/20/25
-057,Spearhead,1,,Orders and Related,10/15/20/25
-041,Retreat,5,,Orders and Related,10/15/20/25
-094,Wound,5,095,Status Markers,10/15/20/25
-079,V2: Dogged,5,,Status Markers,10/15/20/25
-084,V3: NWI,2,,Status Markers,10/15/20/25
-058,Unconscious,5,,Status Markers,10/15/20/25
-069,Spawn-Embryo,5,,Status Markers,10/15/20/25
-CP Symbiont Inactive,Symbiont Inactive,5,,Status Markers,10/15/20/25
-086,Transmuted,2,,Status Markers,10/15/20/25
-CP Casevac,CASEVAC,,,Status Markers,10/15/20/25
-000,Prone,5,,Status Markers,10/15/20/25
-Sapper,Saper,5,,Status Markers,10/15/20/25
-005,IMM-1,3,,Status Markers,10/15/20/25
-053,IMM-2,3,,Status Markers,10/15/20/25
-063,DIS,2,,Status Markers,10/15/20/25
-008,POS,1,,Status Markers,10/15/20/25
-038,Sepsitorized,3,,Status Markers,10/15/20/25
-013,Burnt,2,,Status Markers,10/15/20/25
-046,Blinded,2,,Status Markers,10/15/20/25
-048,Targeted,3,,Status Markers,10/15/20/25
-051,Isolated,2,,Status Markers,10/15/20/25
-088,Suppression Fire,2,,Status Markers,10/15/20/25
-009,Unloaded,4,,Status Markers,10/15/20/25
-074,Damaged,2,,Status Markers,10/15/20/25
-076,Destroyed,2,,Status Markers,10/15/20/25
-125,Tinbot A,2,,Status Markers,10/15/20/25
-123,Tinbot B,2,,Status Markers,10/15/20/25
-090,Supportware,4,,Status Markers,10/15/20/25
-115,SUP: Fairy Dust,1,,Status Markers,10/15/20/25
-127,Marksmanship L2,2,,Status Markers,10/15/20/25
-129,E. Reaction B2,2,,Status Markers,10/15/20/25
-Haris L1,Haris L1,2,,Status Markers,10/15/20/25
-Proxy,Proxy Active,2,,Status Markers,10/15/20/25
-link team leader,Link Leader,2,,Status Markers,10/15/20/25
-066,Mines,3,,Deployables,25
-078,Monofilament Mines,2,,Deployables,25
-108,Viral Mines,1,,Deployables,25
-065,E/Mauler,1,,Deployables,25
-104,Repeater,4,,Deployables,25
-120,Sniffer,3,,Deployables,25
-CP Nullifier,Nullifier,3,,Deployables,25
-184,Camo Forest 1 (Hi Res),1,,Hidden Models,25/40/55
-111,Camo Forest 2,1,,Hidden Models,25/40/55
-112,Camo Forest 3,1,,Hidden Models,25/40/55
-113,Camo Brown 1,1,,Hidden Models,25/40/55
-114,Camo Brown 2,1,,Hidden Models,25/40/55
-109,Camo Brown 3,1,,Hidden Models,25/40/55
-188,Camo Green 1 (Hi Res),1,,Hidden Models,25/40/55
-189,Camo Green 2 (Hi Res),1,,Hidden Models,25/40/55
-190,Camo Green 3 (Hi Res),1,,Hidden Models,25/40/55
-116,TO Camo Yellow 1,1,,Hidden Models,25/40/55
-117,TO Camo Yellow 2,1,,Hidden Models,25/40/55
-118,TO Camo Violet 1,1,,Hidden Models,25/40/55
-119,TO Camo Violet 2,1,,Hidden Models,25/40/55
-185,TO Camo Blue 1 (Hi Res),1,,Hidden Models,25/40/55
-015,IMP-1,2,,Hidden Models,25/40/55
-017,IMP-2,2,,Hidden Models,25/40/55
-Seed Embryo,Seed Embryo,5,,Hidden Models,25
-Holoecho A 1,Holoecho Green 1,2,,Hidden Models,25/40/55
-Holoecho A 2,Holoecho Green 2,2,,Hidden Models,25/40/55
-Holoecho B 1,Holoecho Yellow 1,2,,Hidden Models,25/40/55
-Holoecho B 2,Holoecho Yellow 2,2,,Hidden Models,25/40/55
-CP Alien Console A,Alien Console A,,,Scenario Markers,40
-CP Alien Console B,Alien Console B,,,Scenario Markers,40
-CP Alien Console C,Alien Console C,,,Scenario Markers,40
-CP Alien Tech,Alien Tech,,,Scenario Markers,40
-CP Console A,Console A,,,Scenario Markers,40
-CP Console B,Console B,,,Scenario Markers,40
-CP Console C,Console C,,,Scenario Markers,40
-CP Crash Coffin,Crash Coffin,,,Scenario Markers,40
-CP Elevator,Elevator,4,,Scenario Markers,25/40
-131,Hoist,1,,Scenario Markers,55
-CP Security Rem,Security REM,,,Scenario Markers,40
-CP Tech Coffin,Tech Coffin,,,Scenario Markers,40
-CP Trans Antenna,Transmission Antenna,,,Scenario Markers,40
-CP Tracking Beacon,Tracking Beacon,,,Scenario Markers,25
-CP Decontaminated,Decontaminated,,,Scenario Markers,10/15/20/25
-CP Infected,Infected,,,Scenario Markers,10/15/20/25
-132,Objective,6,,Scenario Markers,40
-147,Narrow Gate,4,,Misc Markers,30
-151,Wide Gate,3,,Misc Markers,50
-154,Cargo Gate,2,,Misc Markers,70
-193,Motorcycle,1,194,Misc Markers,55
-Image-Aleph - Main Logo,Aleph,,,Faction Logos,10/15/20/25
-Image-Aleph - Sectorial - Assault Subsection,Steel Phalanx,,,Faction Logos,10/15/20/25
-Image-Ariadna - Main Logo,Ariadna,,,Faction Logos,10/15/20/25
-Ariadna - Sectorial - Caledonian Highlander Army v2,Caledonian,,,Faction Logos,10/15/20/25
-Image-Ariadna - Sectorial - Force de RR Merovingienne v3,Merovingians,,,Faction Logos,10/15/20/25
-Image-Combined Army - Main Logo,Combined Army,,,Faction Logos,10/15/20/25
-Image-Combined Army - Sectorial - Morat Aggression Force v2,Morat,,,Faction Logos,10/15/20/25
-Image-Combined Army - Sectorial - Shasvastii Expeditionary Force,Shasvastii,,,Faction Logos,10/15/20/25
-Image-Mercs - Main Logo,Mercenaries,,,Faction Logos,10/15/20/25
-Image-Nomads - Main Logo v2,Nomads,,,Faction Logos,10/15/20/25
-Image-Nomads - Sectorial - Jurisdictional Command of Bakunin,Bakunin,,,Faction Logos,10/15/20/25
-Image-Nomads - Sectorial - Jurisdictional Command of Corregidor,Corregidor,,,Faction Logos,10/15/20/25
-Image-PanOceania - Main Logo v2,PanOceania,,,Faction Logos,10/15/20/25
-Image-PanOceania - Sectorial - Neoterran Capitaline Army v2,Neoterra,,,Faction Logos,10/15/20/25
-PanOceania - Sectorial - Military Orders,Military Orders,,,Faction Logos,10/15/20/25
-PanOceania - Sectorial - Shock Army of Acontecimento,Acontecimento,,,Faction Logos,10/15/20/25
-Image-Tohaa - Main Logo v5,Tohaa,,,Faction Logos,10/15/20/25
-Image-Yu Jing - Main Logo,Yu Jing,,,Faction Logos,10/15/20/25
-Image-Yu Jing - Sectorial - Imperial Service v2,Imperial Service,,,Faction Logos,10/15/20/25
-Yu Jing - Sectorial - Japanese Sectorial Army,Japanese Sectorial Army,,,Faction Logos,10/15/20/25
+019,Regular,,Orders and Related,10/15/20/25
+029,Irregular,,Orders and Related,10/15/20/25
+033,Impetuous,,Orders and Related,10/15/20/25
+Ex Impetuious,Extreme Impetuous,,Orders and Related,10/15/20/25
+056,Lieutenant,,Orders and Related,10/15/20/25
+142,Command Token,,Orders and Related,10/15/20/25
+round_command_cropped,Command Token (round),,Orders and Related,10/15/20/25
+057,Spearhead,,Orders and Related,10/15/20/25
+041,Retreat,,Orders and Related,10/15/20/25
+094,Wound,095,Status Markers,10/15/20/25
+079,V2: Dogged,,Status Markers,10/15/20/25
+084,V3: NWI,,Status Markers,10/15/20/25
+058,Unconscious,,Status Markers,10/15/20/25
+069,Spawn-Embryo,,Status Markers,10/15/20/25
+CP Symbiont Inactive,Symbiont Inactive,,Status Markers,10/15/20/25
+086,Transmuted,,Status Markers,10/15/20/25
+CP Casevac,CASEVAC,,Status Markers,10/15/20/25
+000,Prone,,Status Markers,10/15/20/25
+Sapper,Saper,,Status Markers,10/15/20/25
+005,IMM-1,,Status Markers,10/15/20/25
+053,IMM-2,,Status Markers,10/15/20/25
+063,DIS,,Status Markers,10/15/20/25
+008,POS,,Status Markers,10/15/20/25
+038,Sepsitorized,,Status Markers,10/15/20/25
+013,Burnt,,Status Markers,10/15/20/25
+046,Blinded,,Status Markers,10/15/20/25
+048,Targeted,,Status Markers,10/15/20/25
+051,Isolated,,Status Markers,10/15/20/25
+088,Suppression Fire,,Status Markers,10/15/20/25
+009,Unloaded,,Status Markers,10/15/20/25
+074,Damaged,,Status Markers,10/15/20/25
+076,Destroyed,,Status Markers,10/15/20/25
+125,Tinbot A,,Status Markers,10/15/20/25
+123,Tinbot B,,Status Markers,10/15/20/25
+090,Supportware,,Status Markers,10/15/20/25
+115,SUP: Fairy Dust,,Status Markers,10/15/20/25
+127,Marksmanship L2,,Status Markers,10/15/20/25
+129,E. Reaction B2,,Status Markers,10/15/20/25
+Haris L1,Haris L1,,Status Markers,10/15/20/25
+Proxy,Proxy Active,,Status Markers,10/15/20/25
+link team leader,Link Leader,,Status Markers,10/15/20/25
+066,Mines,,Deployables,25
+078,Monofilament Mines,,Deployables,25
+108,Viral Mines,,Deployables,25
+065,E/Mauler,,Deployables,25
+104,Repeater,,Deployables,25
+120,Sniffer,,Deployables,25
+CP Nullifier,Nullifier,,Deployables,25
+184,Camo Forest 1 (Hi Res),,Hidden Models,25/40/55
+111,Camo Forest 2,,Hidden Models,25/40/55
+112,Camo Forest 3,,Hidden Models,25/40/55
+113,Camo Brown 1,,Hidden Models,25/40/55
+114,Camo Brown 2,,Hidden Models,25/40/55
+109,Camo Brown 3,,Hidden Models,25/40/55
+188,Camo Green 1 (Hi Res),,Hidden Models,25/40/55
+189,Camo Green 2 (Hi Res),,Hidden Models,25/40/55
+190,Camo Green 3 (Hi Res),,Hidden Models,25/40/55
+116,TO Camo Yellow 1,,Hidden Models,25/40/55
+117,TO Camo Yellow 2,,Hidden Models,25/40/55
+118,TO Camo Violet 1,,Hidden Models,25/40/55
+119,TO Camo Violet 2,,Hidden Models,25/40/55
+185,TO Camo Blue 1 (Hi Res),,Hidden Models,25/40/55
+015,IMP-1,,Hidden Models,25/40/55
+017,IMP-2,,Hidden Models,25/40/55
+Seed Embryo,Seed Embryo,,Hidden Models,25
+Holoecho A 1,Holoecho Green 1,,Hidden Models,25/40/55
+Holoecho A 2,Holoecho Green 2,,Hidden Models,25/40/55
+Holoecho B 1,Holoecho Yellow 1,,Hidden Models,25/40/55
+Holoecho B 2,Holoecho Yellow 2,,Hidden Models,25/40/55
+CP Alien Console A,Alien Console A,,Scenario Markers,40
+CP Alien Console B,Alien Console B,,Scenario Markers,40
+CP Alien Console C,Alien Console C,,Scenario Markers,40
+CP Alien Tech,Alien Tech,,Scenario Markers,40
+CP Console A,Console A,,Scenario Markers,40
+CP Console B,Console B,,Scenario Markers,40
+CP Console C,Console C,,Scenario Markers,40
+CP Crash Coffin,Crash Coffin,,Scenario Markers,40
+CP Elevator,Elevator,,Scenario Markers,25/40
+131,Hoist,,Scenario Markers,55
+CP Security Rem,Security REM,,Scenario Markers,40
+CP Tech Coffin,Tech Coffin,,Scenario Markers,40
+CP Trans Antenna,Transmission Antenna,,Scenario Markers,40
+CP Tracking Beacon,Tracking Beacon,,Scenario Markers,25
+CP Decontaminated,Decontaminated,,Scenario Markers,10/15/20/25
+CP Infected,Infected,,Scenario Markers,10/15/20/25
+132,Objective,,Scenario Markers,40
+147,Narrow Gate,,Misc Markers,30
+151,Wide Gate,,Misc Markers,50
+154,Cargo Gate,,Misc Markers,70
+193,Motorcycle,194,Misc Markers,55
+Image-Aleph - Main Logo,Aleph,,Faction Logos,10/15/20/25
+Image-Aleph - Sectorial - Assault Subsection,Steel Phalanx,,Faction Logos,10/15/20/25
+Image-Ariadna - Main Logo,Ariadna,,Faction Logos,10/15/20/25
+Ariadna - Sectorial - Caledonian Highlander Army v2,Caledonian,,Faction Logos,10/15/20/25
+Image-Ariadna - Sectorial - Force de RR Merovingienne v3,Merovingians,,Faction Logos,10/15/20/25
+Image-Combined Army - Main Logo,Combined Army,,Faction Logos,10/15/20/25
+Image-Combined Army - Sectorial - Morat Aggression Force v2,Morat,,Faction Logos,10/15/20/25
+Image-Combined Army - Sectorial - Shasvastii Expeditionary Force,Shasvastii,,Faction Logos,10/15/20/25
+Haqqislam - Main Logo,Haqqislam,,Faction Logos,10/15/20/25
+Haqqislam - Sectorial - Hassassin Bahram v2,Hassassins,,Faction Logos,10/15/20/25
+Haqqislam - Sectorial - Qapu Khalqi,Qapu Khalqi,,Faction Logos,10/15/20/25
+Image-Mercs - Main Logo,Mercenaries,,Faction Logos,10/15/20/25
+Image-Nomads - Main Logo v2,Nomads,,Faction Logos,10/15/20/25
+Image-Nomads - Sectorial - Jurisdictional Command of Bakunin,Bakunin,,Faction Logos,10/15/20/25
+Image-Nomads - Sectorial - Jurisdictional Command of Corregidor,Corregidor,,Faction Logos,10/15/20/25
+Image-PanOceania - Main Logo v2,PanOceania,,Faction Logos,10/15/20/25
+Image-PanOceania - Sectorial - Neoterran Capitaline Army v2,Neoterra,,Faction Logos,10/15/20/25
+PanOceania - Sectorial - Military Orders,Military Orders,,Faction Logos,10/15/20/25
+PanOceania - Sectorial - Shock Army of Acontecimento,Acontecimento,,Faction Logos,10/15/20/25
+Image-Tohaa - Main Logo v5,Tohaa,,Faction Logos,10/15/20/25
+Image-Yu Jing - Main Logo,Yu Jing,,Faction Logos,10/15/20/25
+Image-Yu Jing - Sectorial - Imperial Service v2,Imperial Service,,Faction Logos,10/15/20/25
+Yu Jing - Sectorial - Japanese Sectorial Army,Japanese Sectorial Army,,Faction Logos,10/15/20/25
