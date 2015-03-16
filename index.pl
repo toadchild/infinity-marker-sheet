@@ -174,10 +174,15 @@ sub read_annotations{
     open(my $data, '<', "annotation.csv");
     while(my $line = <$data>){
         chomp $line;
-        my ($id, $name, $mask, $cat, $sizes) = split /,/, $line;
+        my ($id, $name, $mask, $cat, $sizes, $overlay) = split /,/, $line;
         $id =~ s/ /_/g;
-        my $imgfile = "jpg/marker-$id.jpg";
-        my $thumbfile = "thumb/marker-$id.jpg";
+
+        my @label = ("marker", $id);
+        push @label, $overlay if $overlay;
+        my $label = join("-", @label);
+
+        my $imgfile = "jpg/$label.jpg";
+        my $thumbfile = "thumb/$label.jpg";
         my @sizes = split /\//, $sizes;
         push @$annotations, {id => $id, name => $name, imgfile => $imgfile, thumbfile => $thumbfile, sizes => \@sizes, category => $cat};
     }
