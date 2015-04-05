@@ -1,0 +1,20 @@
+Seemingly perfect reproduction instructions for GIMP
+
+Vertical guides at 81 & 114
+Horizontal guides at 200 & 239
+
+1. Test "2" size 48 font "Arial Black, Heavy" color white hinting OFF
+2. Align on empty jewel
+3. Duplicate that layer
+4. On bottom one, select the 2 with the text tool
+5. Right click on text, path from text
+6. Set FG to black
+7. edit > stroke path
+8. merge the text layers
+8. text shapes match perfectly!
+
+Drop shadow
+
+1. filters > light & dark > drop shadow
+2. x: 0 y: 0 blur: 20 opacity: 95
+3. Merge with the number layer
