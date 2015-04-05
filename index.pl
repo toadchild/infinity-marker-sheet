@@ -70,7 +70,7 @@ EOF
         my ($width, $height) = imgsize($marker->{thumbfile});
         print "<td><img src='$marker->{thumbfile}' height=$height width=$width></td>\n";
         print "<td>$marker->{name}</td>\n";
-        print "<td><select name='$marker->{id}_size'>\n";
+        print "<td><select name='$marker->{label}_size'>\n";
         for my $size (@{$marker->{sizes}}){
             my $selected = "";
             if($size == 25){
@@ -79,7 +79,7 @@ EOF
             print "<option value='$size'$selected>$size mm</option>\n";
         }
         print "</select></td>\n";
-        print "<td> <input type=text name='$marker->{id}' value='0' size=2></td>\n";
+        print "<td> <input type=text name='$marker->{label}' value='0' size=2></td>\n";
         print "</tr>\n";
     }
     print "</table>\n";
@@ -125,7 +125,7 @@ EOF
 
     my $page = $pdf->new_page('MediaBox' => $paper);
     for my $marker (@$annotations){
-        my $num = param($marker->{id});
+        my $num = param($marker->{label});
         if($num){
             my $img = $pdf->image($marker->{imgfile});
             my ($xres, $yres) = imgsize($marker->{imgfile});
@@ -134,7 +134,7 @@ EOF
             # 1 point is 1/72 inch
             # without a $scale, renders at 1:1 pixels:points
             # scale is units of points/pixel
-            my $size = param("$marker->{id}_size") // 25;
+            my $size = param("$marker->{label}_size") // 25;
             my $scale = ($size / 25.4 * 72)/($xres) * 1.04;
             my $scaled_width = $xres * $scale;
             my $scaled_height = $yres * $scale;;
@@ -184,6 +184,6 @@ sub read_annotations{
         my $imgfile = "jpg/$label.jpg";
         my $thumbfile = "thumb/$label.jpg";
         my @sizes = split /\//, $sizes;
-        push @$annotations, {id => $id, name => $name, imgfile => $imgfile, thumbfile => $thumbfile, sizes => \@sizes, category => $cat};
+        push @$annotations, {id => $id, name => $name, imgfile => $imgfile, thumbfile => $thumbfile, sizes => \@sizes, category => $cat, label => $label};
     }
 }
