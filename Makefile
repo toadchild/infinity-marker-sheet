@@ -17,6 +17,7 @@ jpg: .PHONY
 	./doconversion.pl ppm jpg
 	./doconversion.pl killian jpg
 	./doconversion.pl command jpg
+	./doconversion.pl grey_camo jpg
 
 install:
 	rm -rf /var/www/inf-dice/markers/jpg/
