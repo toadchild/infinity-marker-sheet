@@ -12,8 +12,9 @@ ppm: Sheets_Letter.pdf
 	pdfimages Sheets_Letter.pdf ppm/marker
 
 jpg: .PHONY
-	rm -rf jpg
+	rm -rf jpg thumb
 	mkdir jpg
+	mkdir thumb
 	./doconversion.pl ppm jpg
 	./doconversion.pl killian jpg
 	./doconversion.pl command jpg
