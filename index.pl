@@ -89,7 +89,7 @@ EOF
     print "</form>\n";
 
     print "<h2>Copyright Notice</h2>\n";
-    print "<p>This tool was created by <a href='http://ghostlords.com/'>Jonathan Polley</a> to help enhance your enjoyment of Infinity the Game.  Please direct any feedback to <a href='mailto:jonathan\@ghostlords.com'>jonathan\@ghostlords.com</a>.</p>\n";
+    print "<p>This tool was created by <a href='http://ghostlords.com/'>Jonathan Polley</a> to help enhance your enjoyment of Infinity the Game.  Please direct any feedback to <a href='mailto:jonathan\@ghostlords.com'>jonathan\@ghostlords.com</a>. My other Infinity resources may be found <a href='http://infinity.ghostlords.com'>here</a>.</p>\n";
     print "<p><a href='http://infinitythegame.com'>Infinity the Game</a> is &copy; Corvus Belli SLL. All images are property of and &copy; Corvus Belli SLL. The sole intended purpose of this tool is to make play aids for Infinity the Game. </p>\n";
     print "<p>Vectorized faction logos created by Vyo on the forum. Human Sphere and Paradiso icons extracted by Killian (Deep-Green-X).  Round command token created by Jakob Kantor.</p>\n";
 
