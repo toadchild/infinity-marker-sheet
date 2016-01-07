@@ -18,6 +18,7 @@ jpg: .PHONY
 	./doconversion.pl killian jpg
 	./doconversion.pl command jpg
 	./doconversion.pl grey_camo jpg
+	./doconversion.pl holoecho_colors jpg
 
 install:
 	rm -rf /var/www/inf-dice/markers/jpg/
