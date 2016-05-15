@@ -1,4 +1,4 @@
-all: clean n3 killian command grey_camo holoecho_colors
+all: clean n3 killian vyo command grey_camo holoecho_colors
 
 .PHONY:
 
@@ -15,6 +15,9 @@ n3: .PHONY
 
 killian: .PHONY
 	./doconversion.pl killian jpg
+
+vyo: .PHONY
+	./doconversion.pl vyo jpg
 
 command: .PHONY
 	./doconversion.pl command jpg
