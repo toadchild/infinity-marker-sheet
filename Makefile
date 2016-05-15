@@ -2,10 +2,6 @@ all: ppm jpg
 
 .PHONY:
 
-download:
-	rm -f Sheets_Letter.pdf
-	wget http://infinitythegame.com/archivo/Sheets_Letter.pdf
-
 ppm: Sheets_Letter.pdf
 	rm -rf ppm
 	mkdir ppm
