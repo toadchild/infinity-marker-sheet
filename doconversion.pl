@@ -21,7 +21,7 @@ while(my $line = <$file>){
     my $infile;
     my $special = 0;
     if($id =~ m/^\d\d\d$/){
-        $infile = "$src/marker-$id.$src";
+        $infile = "$src/marker-$id.ppm";
     }else{
         $infile = "$src/$id.png";
         $id =~ s/ /_/g;
@@ -50,7 +50,7 @@ while(my $line = <$file>){
         # apply mask
         if($mask){
             print "Masking $id based on $mask\n";
-            my $maskfile = "$src/marker-$mask.$src";
+            my $maskfile = "$src/marker-$mask.ppm";
             my $tmpfile = "$dest/orig-marker-$id.$dest";
 
             system("mv $outfile $tmpfile");

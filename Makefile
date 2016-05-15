@@ -1,20 +1,28 @@
-all: ppm jpg
+all: clean n3 killian command grey_camo holoecho_colors
 
 .PHONY:
 
-ppm: Sheets_Letter.pdf
-	rm -rf ppm
-	mkdir ppm
-	pdfimages Sheets_Letter.pdf ppm/marker
-
-jpg: .PHONY
+clean:
 	rm -rf jpg thumb
 	mkdir jpg
 	mkdir thumb
-	./doconversion.pl ppm jpg
+
+n3: .PHONY
+	rm -rf n3
+	mkdir n3
+	pdfimages Sheets_Letter.pdf n3/marker
+	./doconversion.pl n3 jpg
+
+killian: .PHONY
 	./doconversion.pl killian jpg
+
+command: .PHONY
 	./doconversion.pl command jpg
+
+grey_camo: .PHONY
 	./doconversion.pl grey_camo jpg
+
+holoecho_colors: .PHONY
 	./doconversion.pl holoecho_colors jpg
 
 install:
