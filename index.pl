@@ -26,6 +26,16 @@ Content-Type: text/html; charset=utf-8
 <head>
 <meta charset="UTF-8">
 <title>Infinity Marker Sheet Creator</title>
+<style> 
+.markers {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.group {
+    margin: 10px;
+}
+</style>
 </head>
 <body>
 EOF
@@ -51,16 +61,19 @@ EOF
     print "<option value='A4'>A4</option>\n";
     print "</select>\n";
     print "<h2>Markers</h2>\n";
+    print "<div class='markers'>\n";
     my $category = "";
 
     for my $marker (@$annotations){
         if($category ne $marker->{category}){
-            $category = $marker->{category};
-
             if($category ne ""){
                 print "</table>\n";
+                print "</div>\n";
             }
 
+            $category = $marker->{category};
+
+            print "<div class='group'>\n";
             print "<h3>$category</h3>\n";
             print "<table>\n";
             print "<tr><th></th><th>Name</th><th>Size</th><th>Count</th></tr>\n";
@@ -83,6 +96,8 @@ EOF
         print "</tr>\n";
     }
     print "</table>\n";
+    print "</div>\n";
+    print "</div>\n";
 
     print "<input type='hidden' name='action' value='draw'>\n";
     print "<input type='submit'>\n";
