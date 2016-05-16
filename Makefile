@@ -1,4 +1,4 @@
-all: clean n3 hsn3 killian vyo command grey_camo holoecho_colors
+all: clean n3 hsn3 killian vyo command grey_camo holoecho_colors audrey_ewing
 
 .PHONY:
 
@@ -30,6 +30,9 @@ grey_camo: .PHONY
 
 holoecho_colors: .PHONY
 	./doconversion.pl holoecho_colors jpg
+
+audrey_ewing: .PHONY
+	./doconversion.pl audrey_ewing jpg
 
 install:
 	rm -rf /var/www/inf-dice/markers/jpg/
