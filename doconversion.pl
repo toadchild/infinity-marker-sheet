@@ -19,13 +19,11 @@ while(my $line = <$file>){
 
     # convert file
     my $infile;
-    my $special = 0;
     if($id =~ m/^\d\d\d$/){
         $infile = "$src/marker-$id.ppm";
     }else{
         $infile = "$src/$id.png";
         $id =~ s/ /_/g;
-        $special = 1;
     }
 
     # Skip files that are not in this directory
@@ -39,7 +37,7 @@ while(my $line = <$file>){
 
         my $resize = "";
         my ($xres, $yres) = imgsize($infile);
-        if($special && $xres > 350){
+        if($xres > 350){
             my $width = 350;
             my $height = $yres * $width / $xres;
             $resize = "-resize ".$width."x".$height;
