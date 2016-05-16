@@ -1,4 +1,4 @@
-all: clean n3 killian vyo command grey_camo holoecho_colors
+all: clean n3 hsn3 killian vyo command grey_camo holoecho_colors
 
 .PHONY:
 
@@ -12,6 +12,9 @@ n3: .PHONY
 	mkdir n3
 	pdfimages Sheets_Letter.pdf n3/marker
 	./doconversion.pl n3 jpg
+
+hsn3: .PHONY
+	./doconversion.pl hsn3 jpg
 
 killian: .PHONY
 	./doconversion.pl killian jpg
