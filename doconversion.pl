@@ -37,8 +37,8 @@ while(my $line = <$file>){
 
         my $resize = "";
         my ($xres, $yres) = imgsize($infile);
-        if($xres > 350){
-            my $width = 350;
+        if($xres > 450){
+            my $width = 450;
             my $height = $yres * $width / $xres;
             $resize = "-resize ".$width."x".$height;
         }
