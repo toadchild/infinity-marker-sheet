@@ -86,7 +86,7 @@ EOF
         print "<td><select name='$marker->{label}_size'>\n";
         for my $size (@{$marker->{sizes}}){
             my $selected = "";
-            if($size == 25){
+            if($size == $marker->{default_size}){
                 $selected = " selected";
             }
             print "<option value='$size'$selected>$size mm</option>\n";
@@ -189,8 +189,11 @@ sub read_annotations{
     open(my $data, '<', "annotation.csv");
     while(my $line = <$data>){
         chomp $line;
-        my ($id, $name, $mask, $cat, $sizes, $overlay) = split /,/, $line;
+        my ($id, $name, $mask, $cat, $sizes, $default_size, $overlay) = split /,/, $line;
         $id =~ s/ /_/g;
+        if(!$default_size){
+            $default_size = 25;
+        }
 
         my @label = ("marker", $id);
         push @label, $overlay if $overlay;
@@ -199,6 +202,6 @@ sub read_annotations{
         my $imgfile = "jpg/$label.jpg";
         my $thumbfile = "thumb/$label.jpg";
         my @sizes = split /\//, $sizes;
-        push @$annotations, {id => $id, name => $name, imgfile => $imgfile, thumbfile => $thumbfile, sizes => \@sizes, category => $cat, label => $label};
+        push @$annotations, {id => $id, name => $name, imgfile => $imgfile, thumbfile => $thumbfile, sizes => \@sizes, default_size => $default_size, category => $cat, label => $label};
     }
 }

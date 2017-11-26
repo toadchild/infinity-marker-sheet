@@ -15,7 +15,7 @@ open(my $file, '<', "annotation.csv");
 
 while(my $line = <$file>){
     chomp $line;
-    my ($id, $name, $mask, $cat, $sizes, $overlay) = split /,/, $line;
+    my ($id, $name, $mask, $cat, $sizes, $default_size, $overlay) = split /,/, $line;
 
     # convert file
     my $infile;
