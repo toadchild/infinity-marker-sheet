@@ -1,4 +1,4 @@
-all: clean n3 hsn3 killian vyo command grey_camo holoecho_colors audrey_ewing
+all: clean n3 hsn3 killian vyo command grey_camo holoecho_colors audrey_ewing tristan
 
 .PHONY:
 
@@ -33,6 +33,9 @@ holoecho_colors: .PHONY
 
 audrey_ewing: .PHONY
 	./doconversion.pl audrey_ewing jpg
+
+tristan: .PHONY
+	./doconversion.pl tristan jpg
 
 install:
 	rm -rf /var/www/inf-dice/markers/jpg/
