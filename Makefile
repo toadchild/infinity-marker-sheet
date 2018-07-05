@@ -1,4 +1,4 @@
-all: clean n3 hsn3 killian vyo command grey_camo holoecho_colors audrey_ewing tristan its
+all: clean n3 hsn3 killian vyo command grey_camo holoecho_colors audrey_ewing tristan its tunguska
 
 .PHONY:
 
@@ -39,6 +39,9 @@ tristan: .PHONY
 
 its: .PHONY
 	./doconversion.pl its jpg
+
+tunguska: .PHONY
+	./doconversion.pl tunguska jpg
 
 install:
 	rm -rf /var/www/inf-dice/markers/jpg/
