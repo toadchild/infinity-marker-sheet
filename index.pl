@@ -106,7 +106,7 @@ EOF
     print "<h2>Copyright Notice</h2>\n";
     print "<p>This tool was created by <a href='http://ghostlords.com/'>Jonathan Polley</a> to help enhance your enjoyment of Infinity the Game.  Please direct any feedback to <a href='mailto:infinity\@ghostlords.com'>infinity\@ghostlords.com</a>. My other Infinity resources may be found <a href='http://infinity.ghostlords.com'>here</a>.</p>\n";
     print "<p><a href='http://infinitythegame.com'>Infinity the Game</a> is &copy; Corvus Belli SLL. All images are property of and &copy; Corvus Belli SLL. The sole intended purpose of this tool is to make play aids for Infinity the Game. </p>\n";
-    print "<p>Human Sphere and Paradiso icons extracted by Killian (Deep-Green-X).  Round command token created by Jakob Kantor. Data Pack and Locked markers by Tristan228.</p>\n";
+    print "<p>Human Sphere and Paradiso icons extracted by Killian (Deep-Green-X).  Round command token created by Jakob Kantor. Alternate Data Pack and Locked markers by Tristan228.</p>\n";
     print <<EOF;
 </body>
 </html>

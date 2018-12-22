@@ -41,7 +41,8 @@ casevac,CASEVAC,,Status Markers,10/15/18/20/25,,
 albedo,Albedo,,Status Markers,10/15/18/20/25,,
 Infinity-Data-Pack-Marker,Data Pack,,Status Markers,10/15/18/20/25,,
 DatenpaketintlT228,Data Pack (alt),,Status Markers,10/15/18/20/25,,
-Locked,Locked,,Status Markers,10/15/18/20/25,,
+locked,Locked,,Status Markers,10/15/18/20/25,,
+Locked,Locked (alt),,Status Markers,10/15/18/20/25,,
 005,IMM-1,,Negative Effects,10/15/18/20/25,,
 053,IMM-2,,Negative Effects,10/15/18/20/25,,
 063,DIS,,Negative Effects,10/15/18/20/25,,
@@ -123,6 +124,7 @@ camo-grey-1,Camo Grey #0,,Grey Camo,25/40/55,,green-jewel-0-custom
 185,TO Camo Blue #3 (Hi Res),,Blue TO Camo,25/40/55,,green-jewel-3
 185,TO Camo Blue #4 (Hi Res),,Blue TO Camo,25/40/55,,green-jewel-4-custom
 185,TO Camo Blue #5 (Hi Res),,Blue TO Camo,25/40/55,,green-jewel-5-custom
+decoy,Decoy-2,,Decoy,25,,
 015,IMP-1 (plain),,Impersonation,25/40/55,,
 017,IMP-2 (plain),,Impersonation,25/40/55,,
 015,IMP-1 #1,,Impersonation,25/40/55,,silver-green-jewel-1
