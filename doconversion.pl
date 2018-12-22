@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Image::Size;
+use Image::Magick;
 
 # called as
 # ./doconversion.pl ppm jpg
@@ -35,50 +35,58 @@ while(my $line = <$file>){
         my $outfile = "$dest/$label.$dest";
         my $thumbfile = "thumb/$label.$dest";
 
-        my $resize = "";
-        my ($xres, $yres) = imgsize($infile);
+        my $img = new Image::Magick;
+        $img->Set(size => '450x450');
+        my $status = $img->Read($infile);
+        $img->Set(density => "150");
+        $img->Set(units => "PixelsPerInch");
+        $img->Set(background => "white");
+        my ($xres, $yres) = $img->Get("columns", "rows");
         if($xres > 450){
             my $width = 450;
             my $height = $yres * $width / $xres;
-            $resize = "-resize ".$width."x".$height;
+            $img->Resize(width => $width, height => $height);
         }
 
-        system("convert -density 150 -units PixelsPerInch -background white -flatten $resize '$infile' $outfile");
+        $img = $img->Flatten();
 
         # apply mask
         if($mask){
             print "Masking $id based on $mask\n";
             my $maskfile = "$src/marker-$mask.ppm";
-            my $tmpfile = "$dest/orig-marker-$id.$dest";
+            my $mask = new Image::Magick;
+            $mask->Read($maskfile);
 
-            system("mv $outfile $tmpfile");
-            system("convert \\( $maskfile -negate \\) $tmpfile $maskfile -composite $outfile");
-            unlink($tmpfile);
+            my $base = $mask->Clone();
+            $base->Negate();
+
+            $base->Composite(image => $img, mask => $mask);
+            $img = $base;
         }
 
         # trim whitespace
-        system("mogrify -fuzz 5% -trim +repage $outfile");
-        ($xres, $yres) = imgsize($outfile);
+        $img->Set(fuzz => "5%");
+        $img->Trim();
+        ($xres, $yres) = $img->Get("columns", "rows");
 
         # apply overlay
         if($overlay){
             print "Overlaying $label with $overlay\n";
 
             my $overlayfile = "overlay/$overlay.png";
-            my $tmpoverlay = "overlay/tmp-$overlay.png";
-            my $tmpfile = "$dest/tmp-$label.$dest";
-
-            # Make a copy of the overlay at the correct size
-            system("convert -resize ".$xres."x".$yres." $overlayfile $tmpoverlay");
-            system("convert $outfile $tmpoverlay -composite $tmpfile");
-            system("mv $tmpfile $outfile");
-            unlink($tmpoverlay);
+            my $overlay = new Image::Magick;
+            $overlay->Read($overlayfile);
+            $overlay->Resize(width => $xres, height => $yres);
+            $img->Composite(image => $overlay);
         }
+
+        # write out the image
+        $img->Write($outfile);
 
         # generate thumbnail
         my $width = 30;
         my $height = $yres * $width / $xres;
-
-        system("convert $outfile -resize $width"."x"."$height $thumbfile");
+        $img->Resize(width => $width, height => $height);
+        $img->Write($thumbfile);
     }
 }
