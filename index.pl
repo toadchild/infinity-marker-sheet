@@ -5,7 +5,7 @@ use warnings;
 use CGI qw/:standard/;
 use PDF::Create;
 use Data::Dumper;
-use Image::Size;
+use Image::Magick;
 
 my $annotations;
 read_annotations();
@@ -15,6 +15,13 @@ if($action eq "draw"){
     print_page();
 }else{
     print_input();
+}
+
+sub imgsize {
+    my ($img_name) = @_;
+    my $img = new Image::Magick;
+    $img->Read($img_name);
+    return $img->Get("columns", "rows");
 }
 
 sub print_input{
