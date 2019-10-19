@@ -1,4 +1,4 @@
-all: clean n3 hsn3 killian army6 command grey_camo holoecho_colors audrey_ewing tristan its tunguska
+all: clean n3 hsn3 killian army6 command grey_camo holoecho_colors audrey_ewing tristan its tunguska vyo
 
 .PHONY:
 
@@ -21,6 +21,9 @@ killian: .PHONY
 
 army6: .PHONY
 	./doconversion.pl army6 jpg
+
+vyo: .PHONY
+	./doconversion.pl vyo jpg
 
 command: .PHONY
 	./doconversion.pl command jpg
