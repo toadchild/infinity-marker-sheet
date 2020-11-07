@@ -15,6 +15,7 @@ open(my $file, '<', "annotation.csv");
 
 while(my $line = <$file>){
     chomp $line;
+    next if !$line;
     my ($id, $name, $mask, $cat, $sizes, $default_size, $overlay) = split /,/, $line;
 
     # convert file
@@ -41,14 +42,9 @@ while(my $line = <$file>){
         $img->Set(density => "150");
         $img->Set(units => "PixelsPerInch");
         $img->Set(background => "white");
-        my ($xres, $yres) = $img->Get("columns", "rows");
-        if($xres > 450){
-            my $width = 450;
-            my $height = $yres * $width / $xres;
-            $img->Resize(width => $width, height => $height);
-        }
 
         $img = $img->Flatten();
+        $img->Set(alpha => 'Off');
 
         # apply mask
         if($mask){
@@ -67,7 +63,7 @@ while(my $line = <$file>){
         # trim whitespace
         $img->Set(fuzz => "5%");
         $img->Trim();
-        ($xres, $yres) = $img->Get("columns", "rows");
+        my ($xres, $yres) = $img->Get("columns", "rows");
 
         # apply overlay
         if($overlay){

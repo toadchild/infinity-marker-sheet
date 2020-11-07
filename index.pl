@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 use CGI qw/:standard/;
-use PDF::Create;
+use PDF::API2;
 use Data::Dumper;
 use Image::Magick;
 
@@ -56,9 +56,10 @@ When you submit, a PDF will be generated and downloaded.
 </p>
 <p>
 For each kind of marker, an appropriate set of size choices are available.
-Markers not marked "Hi Res" may look slightly blurry if they are being scaled
-up, but should still look decent when printed.
 Additional sizes for markers may be added upon request.
+</p>
+<p>
+This page features redesigned N4 tokens are created by <a href='https://forum.corvusbelli.com/threads/n4-c1-token-design-questions.37936/'>Lawson Deming</a>.
 </p>
 EOF
     print "<form method='post'>\n";
@@ -98,6 +99,7 @@ EOF
             }
             print "<option value='$size'$selected>$size mm</option>\n";
         }
+        print "<input type='hidden' name='$marker->{label}_default_size' value='$marker->{default_size}'>\n";
         print "</select></td>\n";
         print "<td> <input type=text name='$marker->{label}' value='0' size=2></td>\n";
         print "</tr>\n";
@@ -112,8 +114,7 @@ EOF
 
     print "<h2>Copyright Notice</h2>\n";
     print "<p>This tool was created by <a href='http://ghostlords.com/'>Jonathan Polley</a> to help enhance your enjoyment of Infinity the Game.  Please direct any feedback to <a href='mailto:infinity\@ghostlords.com'>infinity\@ghostlords.com</a>. My other Infinity resources may be found <a href='http://infinity.ghostlords.com'>here</a>.</p>\n";
-    print "<p><a href='http://infinitythegame.com'>Infinity the Game</a> is &copy; Corvus Belli SLL. All images are property of and &copy; Corvus Belli SLL. The sole intended purpose of this tool is to make play aids for Infinity the Game. </p>\n";
-    print "<p>Human Sphere and Paradiso icons extracted by Killian (Deep-Green-X).  Round command token created by Jakob Kantor. Alternate Data Pack and Locked markers by Tristan228. Classic Mercs logo from <a href='https://forum.corvusbelli.com/threads/high-res-logo-vectors.380/'>Vyo</a>.</p>\n";
+    print "<p><a href='http://infinitythegame.com'>Infinity the Game</a> is &copy; Corvus Belli SLL. The sole intended purpose of this tool is to make play aids for Infinity the Game. </p>\n";
     print <<EOF;
 </body>
 </html>
@@ -126,37 +127,40 @@ sub print_page{
 Content-Type: application/pdf
 
 EOF
-    my $pdf = PDF::Create->new(filename => "-",
-                               Author => "Jonathan Polley",
-                               Title => "Infinty Markers",
-                               Creator => "http://ghostlords.com/",
-                               CreationDate => [localtime],
-                              );
+    my $pdf = PDF::API2->new();
+    $pdf->info(Author => "Jonathan Polley",
+               Title => "Infinty Markers",
+               Creator => "http://infinity.ghostlords.com/",
+               CreationDate => [localtime],
+              );
     my $paper_size = param('paper') // 'Letter';
-    my $paper = $pdf->get_page_size($paper_size);
+    $pdf->mediabox($paper_size);
+    my @bounds = PDF::API2::Util::page_size($paper_size);
     my $min_x = 72/4.0;
     my $min_y = 72/4.0;
-    my $max_x = $paper->[2] - 72/4.0;
-    my $max_y = $paper->[3] - 72/4.0;
+    my $max_x = $bounds[2] - 72/4.0;
+    my $max_y = $bounds[3] - 72/4.0;
 
     my $x = $min_x;
     my $y = $max_y;
     my $max_height = 0;
-    my $pad = 72.0/11;
+    my $pad = 0.03 * 72.0;
 
-    my $page = $pdf->new_page('MediaBox' => $paper);
+    my $page = $pdf->page();
     for my $marker (@$annotations){
         my $num = param($marker->{label});
         if($num){
-            my $img = $pdf->image($marker->{imgfile});
+            my $img = $pdf->image_png($marker->{imgfile});
             my ($xres, $yres) = imgsize($marker->{imgfile});
 
-            # $size in width, in mm
             # 1 point is 1/72 inch
+            # Tokens by Lawson are 600 DPI
             # without a $scale, renders at 1:1 pixels:points
             # scale is units of points/pixel
-            my $size = param("$marker->{label}_size") // 25;
-            my $scale = ($size / 25.4 * 72)/($xres) * 1.04;
+            # Resize images based on the default vs. target size in mm
+            my $size = param("$marker->{label}_size");
+            my $default_size = param("$marker->{label}_default_size");
+            my $scale = 72.0 / 600 * $size / $default_size;
             my $scaled_width = $xres * $scale;
             my $scaled_height = $yres * $scale;;
 
@@ -178,15 +182,16 @@ EOF
                     $y = $max_y;
                     $max_height = $scaled_height;
                     $x = $min_x;
-                    $page = $pdf->new_page('MediaBox' => $paper);
+                    $page = $pdf->page();
                 }
 
-                $page->image(image => $img, xpos => $x, ypos => $y, xscale => $scale, yscale => $scale, yalign => 2);
+                my $gfx = $page->gfx();
+                $gfx->image($img, $x, $y - $scaled_height, $scale);
                 $x += $scaled_width + $pad;
             }
         }
     }
-    $pdf->close();
+    print $pdf->stringify();
 }
 
 sub read_annotations{
@@ -195,6 +200,7 @@ sub read_annotations{
     open(my $data, '<', "annotation.csv");
     while(my $line = <$data>){
         chomp $line;
+        next if !$line;
         my ($id, $name, $mask, $cat, $sizes, $default_size, $overlay) = split /,/, $line;
         $id =~ s/ /_/g;
         if(!$default_size){
@@ -205,8 +211,8 @@ sub read_annotations{
         push @label, $overlay if $overlay;
         my $label = join("-", @label);
 
-        my $imgfile = "jpg/$label.jpg";
-        my $thumbfile = "thumb/$label.jpg";
+        my $imgfile = "png/$label.png";
+        my $thumbfile = "thumb/$label.png";
         my @sizes = split /\//, $sizes;
         push @$annotations, {id => $id, name => $name, imgfile => $imgfile, thumbfile => $thumbfile, sizes => \@sizes, default_size => $default_size, category => $cat, label => $label};
     }
