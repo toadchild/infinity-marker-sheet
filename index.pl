@@ -61,15 +61,26 @@ Additional sizes for markers may be added upon request.
 <p>
 This page features redesigned N4 tokens are created by <a href='https://forum.corvusbelli.com/threads/n4-c1-token-design-questions.37936/'>Lawson Deming</a>.
 </p>
+
+<form method='post'>
+<h2>Layout</h2>
+<p>
+<b>Paper Size: </b>
+<select name='paper'>
+<option value='Letter' selected>Letter</option>
+<option value='A4'>A4</option>
+</select>
+</p>
+
+<p>
+<b>Padding: </b>
+<input type='text' name='pad_mm' value='1'>
+mm
+</p>
+
+<h2>Markers</h2>
+<div class='markers'>
 EOF
-    print "<form method='post'>\n";
-    print "<h2>Paper Size</h2>\n";
-    print "<select name='paper'>\n";
-    print "<option value='Letter' selected>Letter</option>\n";
-    print "<option value='A4'>A4</option>\n";
-    print "</select>\n";
-    print "<h2>Markers</h2>\n";
-    print "<div class='markers'>\n";
     my $category = "";
 
     for my $marker (@$annotations){
@@ -106,16 +117,16 @@ EOF
     }
     print "</table>\n";
     print "</div>\n";
-    print "</div>\n";
-
-    print "<input type='hidden' name='action' value='draw'>\n";
-    print "<input type='submit'>\n";
-    print "</form>\n";
-
-    print "<h2>Copyright Notice</h2>\n";
-    print "<p>This tool was created by <a href='http://ghostlords.com/'>Jonathan Polley</a> to help enhance your enjoyment of Infinity the Game.  Please direct any feedback to <a href='mailto:infinity\@ghostlords.com'>infinity\@ghostlords.com</a>. My other Infinity resources may be found <a href='http://infinity.ghostlords.com'>here</a>.</p>\n";
-    print "<p><a href='http://infinitythegame.com'>Infinity the Game</a> is &copy; Corvus Belli SLL. The sole intended purpose of this tool is to make play aids for Infinity the Game. </p>\n";
     print <<EOF;
+</div>
+
+<input type='hidden' name='action' value='draw'>
+<input type='submit'>
+</form>
+
+<h2>Copyright Notice</h2>
+<p>This tool was created by <a href='http://ghostlords.com/'>Jonathan Polley</a> to help enhance your enjoyment of Infinity the Game.  Please direct any feedback to <a href='mailto:infinity\@ghostlords.com'>infinity\@ghostlords.com</a>. My other Infinity resources may be found <a href='http://infinity.ghostlords.com'>here</a>.</p>
+<p><a href='http://infinitythegame.com'>Infinity the Game</a> is &copy; Corvus Belli SLL. The sole intended purpose of this tool is to make play aids for Infinity the Game. </p>
 </body>
 </html>
 EOF
@@ -144,7 +155,8 @@ EOF
     my $x = $min_x;
     my $y = $max_y;
     my $max_height = 0;
-    my $pad = 0.03 * 72.0;
+    my $pad_mm = param('pad_mm') // 1;
+    my $pad = $pad_mm / 25.4 * 72.0;
 
     my $page = $pdf->page();
     for my $marker (@$annotations){
