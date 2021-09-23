@@ -87,12 +87,13 @@ N4_TOKENS_v05_25mm_EXPORT_195,Deployable Loaded (3),,Ammunition,25/20/18/15/10,2
 N4_TOKENS_v05_25mm_EXPORT_196,BS Unloaded,,Ammunition,25/20/18/15/10,25,
 N4_TOKENS_v05_25mm_EXPORT_197,Deployable Unloaded,,Ammunition,25/20/18/15/10,25,
 
+N4_TOKENS_v05_25mm_EXPORT_335,Mine,,Deployable,25,25,
 N4_TOKENS_v05_25mm_EXPORT_079,AP Mine,,Deployable,25,25,
-N4_TOKENS_v05_25mm_EXPORT_080,Cybermine,,Deployable,25,25,
+N4_TOKENS_v05_25mm_EXPORT_083,Shock Mine,,Deployable,25,25,
 N4_TOKENS_v05_25mm_EXPORT_081,E/M Mine,,Deployable,25,25,
 N4_TOKENS_v05_25mm_EXPORT_082,Monofilament Mine,,Deployable,25,25,
-N4_TOKENS_v05_25mm_EXPORT_083,Shock Mine,,Deployable,25,25,
 N4_TOKENS_v05_25mm_EXPORT_084,Viral Mine,,Deployable,25,25,
+N4_TOKENS_v05_25mm_EXPORT_080,Cybermine,,Deployable,25,25,
 N4_TOKENS_v05_25mm_EXPORT_088,Repeater,,Deployable,25,25,
 N4_TOKENS_v05_25mm_EXPORT_188,Dazer,,Deployable,25,25,
 
