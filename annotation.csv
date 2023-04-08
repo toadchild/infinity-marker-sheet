@@ -74,9 +74,10 @@ N4_TOKENS_v05_25mm_EXPORT_202,Stunned,,Negative States,25/20/18/15/10,25,
 N4_TOKENS_v05_25mm_EXPORT_074,Targeted,,Negative States,25/20/18/15/10,25,
 N4_TOKENS_v05_25mm_EXPORT_085,Retreat!,,Negative States,25/20/18/15/10,25,
 
-N4_TOKENS_v05_25mm_EXPORT_262,Hostile,,Scenario States,25/20/18/15/10,25,
-N4_TOKENS_v05_25mm_EXPORT_263,Data Pack,,Scenario States,25/20/18/15/10,25,
-N4_TOKENS_v05_25mm_EXPORT_264,Designated Target,,Scenario States,25/20/18/15/10,25,
+N4_TOKENS_v05_25mm_EXPORT_262,Hostile,,Scenario,25/20/18/15/10,25,
+N4_TOKENS_v05_25mm_EXPORT_263,Data Pack,,Scenario,25/20/18/15/10,25,
+N4_TOKENS_v05_25mm_EXPORT_264,Designated Target,,Scenario,25/20/18/15/10,25,
+N4_TOKENS_v05_25mm_EXPORT_336,Defensive Turret,,Scenario,25,25,
 
 N4_TOKENS_v05_25mm_EXPORT_190,BS Loaded (1),,Ammunition,25/20/18/15/10,25,
 N4_TOKENS_v05_25mm_EXPORT_191,BS Loaded (2),,Ammunition,25/20/18/15/10,25,
