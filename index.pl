@@ -56,10 +56,9 @@ When you submit, a PDF will be generated and downloaded.
 </p>
 <p>
 For each kind of marker, an appropriate set of size choices are available.
-Additional sizes for markers may be added upon request.
 </p>
 <p>
-This page features redesigned N4 tokens are created by <a href='https://forum.corvusbelli.com/threads/n4-c1-token-design-questions.37936/'>Lawson Deming</a>.
+This page features redesigned N4/N5 tokens are created by <a href='https://forum.corvusbelli.com/threads/n4-c1-token-design-questions.37936/'>Lawson Deming</a>.
 </p>
 
 <form method='post'>

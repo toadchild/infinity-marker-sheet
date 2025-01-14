@@ -8,11 +8,11 @@ Infinity the Game is Copyright Corvus Belli SLL.  All images unless otherwise no
 
 Images contributed by other sources:
 
-* N4 token set created by Lawson Deming (found in lawson/)
+* N4/N5 token set created by Lawson Deming (found in lawson/)
 
 ## Usage instructions
 
-If you just want to create a marker sheet, this app is available at http://infinity.ghostlords.com/markers/n4/
+If you just want to create a marker sheet, this app is available at http://infinity.ghostlords.com/markers/n5/
 
 Should that site go down, a new copy may be installed by following these steps:
 
