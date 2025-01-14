@@ -6,14 +6,6 @@ N4_TOKENS_v05_25mm_EXPORT_004,Regular #4,Order Expenditure,Regular Orders (I),25
 N4_TOKENS_v05_25mm_EXPORT_005,Lieutenant,Order Expenditure,Regular Orders (I),25/20/18/15/10,25
 N4_TOKENS_v05_25mm_EXPORT_006,Lieutenant (Used),Order Expenditure,Regular Orders (I),25/20/18/15/10,25
 
-N4_TOKENS_v05_25mm_EXPORT_353,Regular,Order Expenditure,Regular Orders (II),25/20/18/15/10,25
-N4_TOKENS_v05_25mm_EXPORT_354,Regular #1,Order Expenditure,Regular Orders (II),25/20/18/15/10,25
-N4_TOKENS_v05_25mm_EXPORT_355,Regular #2,Order Expenditure,Regular Orders (II),25/20/18/15/10,25
-N4_TOKENS_v05_25mm_EXPORT_356,Regular #3,Order Expenditure,Regular Orders (II),25/20/18/15/10,25
-N4_TOKENS_v05_25mm_EXPORT_357,Regular #4,Order Expenditure,Regular Orders (II),25/20/18/15/10,25
-N4_TOKENS_v05_25mm_EXPORT_358,Lieutenant,Order Expenditure,Regular Orders (II),25/20/18/15/10,25
-N4_TOKENS_v05_25mm_EXPORT_359,Lieutenant (Used),Order Expenditure,Regular Orders (II),25/20/18/15/10,25
-
 N4_TOKENS_v05_25mm_EXPORT_007,Irregular,Order Expenditure,Special Orders (I),25/20/18/15/10,25
 N4_TOKENS_v05_25mm_EXPORT_008,Irregular #1,Order Expenditure,Special Orders (I),25/20/18/15/10,25
 N4_TOKENS_v05_25mm_EXPORT_009,Irregular #2,Order Expenditure,Special Orders (I),25/20/18/15/10,25
@@ -21,6 +13,14 @@ N4_TOKENS_v05_25mm_EXPORT_010,Irregular #3,Order Expenditure,Special Orders (I),
 N4_TOKENS_v05_25mm_EXPORT_011,Irregular #4,Order Expenditure,Special Orders (I),25/20/18/15/10,25
 N4_TOKENS_v05_25mm_EXPORT_366,Tactical,Order Expenditure,Special Orders (I),25/20/18/15/10,25
 N4_TOKENS_v05_25mm_EXPORT_012,Impetuous,Order Expenditure,Special Orders (I),25/20/18/15/10,25
+
+N4_TOKENS_v05_25mm_EXPORT_353,Regular,Order Expenditure,Regular Orders (II),25/20/18/15/10,25
+N4_TOKENS_v05_25mm_EXPORT_354,Regular #1,Order Expenditure,Regular Orders (II),25/20/18/15/10,25
+N4_TOKENS_v05_25mm_EXPORT_355,Regular #2,Order Expenditure,Regular Orders (II),25/20/18/15/10,25
+N4_TOKENS_v05_25mm_EXPORT_356,Regular #3,Order Expenditure,Regular Orders (II),25/20/18/15/10,25
+N4_TOKENS_v05_25mm_EXPORT_357,Regular #4,Order Expenditure,Regular Orders (II),25/20/18/15/10,25
+N4_TOKENS_v05_25mm_EXPORT_358,Lieutenant,Order Expenditure,Regular Orders (II),25/20/18/15/10,25
+N4_TOKENS_v05_25mm_EXPORT_359,Lieutenant (Used),Order Expenditure,Regular Orders (II),25/20/18/15/10,25
 
 N4_TOKENS_v05_25mm_EXPORT_360,Irregular,Order Expenditure,Special Orders (II),25/20/18/15/10,25
 N4_TOKENS_v05_25mm_EXPORT_361,Irregular #1,Order Expenditure,Special Orders (II),25/20/18/15/10,25
@@ -622,7 +622,7 @@ N4_TOKENS_v05_25mm_EXPORT_279,Player A (Aleph),Factions,Player A,25/20/18/15/10,
 N4_TOKENS_v05_25mm_EXPORT_280,Player A (Tohaa),Factions,Player A,25/20/18/15/10,25
 N4_TOKENS_v05_25mm_EXPORT_281,Player A (NA2),Factions,Player A,25/20/18/15/10,25
 N4_TOKENS_v05_25mm_EXPORT_282,Player A (O-12),Factions,Player A,25/20/18/15/10,25
-N4_TOKENS_v05_25mm_EXPORT_389,Player A (JSA),Factions,Player B,25/20/18/15/10,25
+N4_TOKENS_v05_25mm_EXPORT_389,Player A (JSA),Factions,Player A,25/20/18/15/10,25
 
 N4_TOKENS_v05_25mm_EXPORT_283,Player B (PanO),Factions,Player B,25/20/18/15/10,25
 N4_TOKENS_v05_25mm_EXPORT_284,Player B (Yu Jing),Factions,Player B,25/20/18/15/10,25
