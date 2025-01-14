@@ -16,7 +16,7 @@ open(my $file, '<', "annotation.csv");
 while(my $line = <$file>){
     chomp $line;
     next if !$line;
-    my ($id, $name, $mask, $cat, $sizes, $default_size, $overlay) = split /,/, $line;
+    my ($id, $name, $section, $category, $sizes, $default_size) = split /,/, $line;
 
     # convert file
     my $infile;
@@ -30,7 +30,6 @@ while(my $line = <$file>){
     # Skip files that are not in this directory
     if(-f $infile){
         my @label = ("marker", $id);
-        push @label, $overlay if $overlay;
         my $label = join("-", @label);
 
         my $outfile = "$dest/$label.$dest";
@@ -46,35 +45,10 @@ while(my $line = <$file>){
         $img = $img->Flatten();
         $img->Set(alpha => 'Off');
 
-        # apply mask
-        if($mask){
-            print "Masking $id based on $mask\n";
-            my $maskfile = "$src/marker-$mask.ppm";
-            my $mask = new Image::Magick;
-            $mask->Read($maskfile);
-
-            my $base = $mask->Clone();
-            $base->Negate();
-
-            $base->Composite(image => $img, mask => $mask);
-            $img = $base;
-        }
-
         # trim whitespace
         $img->Set(fuzz => "5%");
         $img->Trim();
         my ($xres, $yres) = $img->Get("columns", "rows");
-
-        # apply overlay
-        if($overlay){
-            print "Overlaying $label with $overlay\n";
-
-            my $overlayfile = "overlay/$overlay.png";
-            my $overlay = new Image::Magick;
-            $overlay->Read($overlayfile);
-            $overlay->Resize(width => $xres, height => $yres);
-            $img->Composite(image => $overlay);
-        }
 
         # write out the image
         $img->Write($outfile);

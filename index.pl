@@ -58,7 +58,7 @@ When you submit, a PDF will be generated and downloaded.
 For each kind of marker, an appropriate set of size choices are available.
 </p>
 <p>
-This page features redesigned N4/N5 tokens are created by <a href='https://forum.corvusbelli.com/threads/n4-c1-token-design-questions.37936/'>Lawson Deming</a>.
+This page features redesigned N5 tokens are created by <a href='https://forum.corvusbelli.com/threads/n4-c1-token-design-questions.37936/'>Lawson Deming</a>.
 </p>
 
 <form method='post'>
@@ -78,9 +78,9 @@ mm
 </p>
 
 <h2>Markers</h2>
-<div class='markers'>
 EOF
     my $category = "";
+    my $section = "";
 
     for my $marker (@$annotations){
         if($category ne $marker->{category}){
@@ -88,11 +88,25 @@ EOF
                 print "</table>\n";
                 print "</div>\n";
             }
+        }
 
+        if ($section ne $marker->{section}) {
+            if($section ne ""){
+                print "</div>\n";
+                print "<hr>\n";
+            }
+
+            $section = $marker->{section};
+
+            print "<h3>$section</h3>\n";
+            print "<div class='markers'>\n";
+        }
+
+        if($category ne $marker->{category}){
             $category = $marker->{category};
 
             print "<div class='group'>\n";
-            print "<h3>$category</h3>\n";
+            print "<h4>$category</h4>\n";
             print "<table>\n";
             print "<tr><th></th><th>Name</th><th>Size</th><th>Count</th></tr>\n";
         }
@@ -212,19 +226,28 @@ sub read_annotations{
     while(my $line = <$data>){
         chomp $line;
         next if !$line;
-        my ($id, $name, $mask, $cat, $sizes, $default_size, $overlay) = split /,/, $line;
+        my ($id, $name, $section, $category, $sizes, $default_size) = split /,/, $line;
         $id =~ s/ /_/g;
         if(!$default_size){
             $default_size = 25;
         }
 
         my @label = ("marker", $id);
-        push @label, $overlay if $overlay;
         my $label = join("-", @label);
 
         my $imgfile = "png/$label.png";
         my $thumbfile = "thumb/$label.png";
         my @sizes = split /\//, $sizes;
-        push @$annotations, {id => $id, name => $name, imgfile => $imgfile, thumbfile => $thumbfile, sizes => \@sizes, default_size => $default_size, category => $cat, label => $label};
+        push @$annotations, {
+            id => $id,
+            name => $name,
+            imgfile => $imgfile,
+            thumbfile => $thumbfile,
+            sizes => \@sizes,
+            default_size => $default_size,
+            section => $section,
+            category => $category,
+            label => $label,
+        };
     }
 }

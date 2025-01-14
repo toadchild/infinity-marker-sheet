@@ -8,7 +8,7 @@ Infinity the Game is Copyright Corvus Belli SLL.  All images unless otherwise no
 
 Images contributed by other sources:
 
-* N4/N5 token set created by Lawson Deming (found in lawson/)
+* N5 token set created by Lawson Deming (found in lawson/)
 
 ## Usage instructions
 
