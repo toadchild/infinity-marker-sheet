@@ -158,6 +158,10 @@ N4_TOKENS_v05_25mm_EXPORT_084,Viral Mine,Deployables,Mines,25,25
 N4_TOKENS_v05_25mm_EXPORT_386,PARA Mine,Deployables,Mines,25,25
 N4_TOKENS_v05_25mm_EXPORT_080,Cybermine,Deployables,Mines,25,25
 
+N4_TOKENS_v05_25mm_EXPORT_243,MadTraps,Deployables,Perimeter,25,25
+N4_TOKENS_v05_25mm_EXPORT_245,CrazyKoala,Deployables,Perimeter,25,25
+N4_TOKENS_v05_25mm_EXPORT_390,WildParrot,Deployables,Perimeter,25,25
+
 N4_TOKENS_v05_25mm_EXPORT_088,Repeater,Deployables,Deployable,25,25
 N4_TOKENS_v05_25mm_EXPORT_188,Dazer,Deployables,Deployable,25,25
 N4_TOKENS_v05_25mm_EXPORT_383,Disco Ball,Deployables,Deployable,25,25
@@ -165,9 +169,6 @@ N4_TOKENS_v05_25mm_EXPORT_384,Disco Ball (Inactive),Deployables,Deployable,25,25
 
 N4_TOKENS_v05_40mm_EXPORT_110,Cutting Foam,Deployables,Deployable Cover,40,40
 N4_TOKENS_v05_40mm_EXPORT_111,Vitroferro,Deployables,Deployable Cover,40,40
-
-N4_TOKENS_v05_25mm_EXPORT_243,MadTraps,Deployables,Perimeter,25,25
-N4_TOKENS_v05_25mm_EXPORT_245,CrazyKoala,Deployables,Perimeter,25,25
 
 N4_TOKENS_v05_25mm_EXPORT_368,Armed Turret 1,Deployables,Turrets,25,25
 N4_TOKENS_v05_25mm_EXPORT_369,Armed Turret 2,Deployables,Turrets,25,25
